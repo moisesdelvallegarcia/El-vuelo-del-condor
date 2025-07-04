@@ -3,46 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>El Vuelo del Cóndor - Próximamente</title>
+  <title>El Vuelo del Cóndor Ayahuasca - Próximamente</title>
   <style>
     body {
       margin: 0;
-      background: linear-gradient(135deg, #000000, #0f2027, #203a43, #2c5364);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      background: #000;
       color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    .background {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0,0,0,0.8), #000);
+      z-index: -3;
+    }
+
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/star.png') repeat;
+      animation: moveStars 60s linear infinite;
+      z-index: -2;
+      opacity: 0.3;
+    }
+
+    @keyframes moveStars {
+      from {background-position: 0 0;}
+      to {background-position: 10000px 10000px;}
+    }
+
+    .condor {
+      position: fixed;
+      top: 30%;
+      left: -20%;
+      width: 200px;
+      opacity: 0.5;
+      animation: flyCondor 30s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes flyCondor {
+      0% { left: -20%; }
+      50% { left: 120%; }
+      100% { left: -20%; }
+    }
+
+    .container {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       height: 100vh;
       text-align: center;
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    h1 {
+      font-size: 2.8em;
+      margin: 20px;
+      text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      text-shadow: 0 0 15px #00ffcc, 0 0 25px #00ffcc;
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffcc; }
+      to { text-shadow: 0 0 30px #00ffcc; }
     }
 
     img {
-      max-width: 60%;
-      height: auto;
+      max-width: 80%;
       border-radius: 15px;
       box-shadow: 0 0 40px rgba(0, 255, 204, 0.5);
-      margin-bottom: 25px;
+      margin: 20px 0;
     }
 
     p {
       font-size: 1.2em;
-      margin: 10px 0;
+      margin: 15px 0;
     }
 
     .button {
@@ -61,12 +101,29 @@
       transform: scale(1.1);
       box-shadow: 0 6px 25px rgba(0, 255, 204, 0.7);
     }
+
+    .vines {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/qjmtLQF/vines.png') no-repeat center center;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.1;
+    }
   </style>
 </head>
 <body>
-  <h1>🌿 Próximamente 🌿</h1>
-  <img src="img/coming-soon-ayahuasca.png.jpg" alt="El Vuelo del Cóndor - Próximamente" />
-  <p>📞 Contacto: <strong>+52 1 446 397 9802 (Pino)</strong></p>
-  <a href="https://www.facebook.com/profile.php?id=61577668214257" class="button" target="_blank">🌐 Visítanos en Facebook</a>
+  <div class="background"></div>
+  <div class="stars"></div>
+  <img class="condor" src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Cóndor" />
+  <div class="vines"></div>
+
+  <div class="container">
+    <h1>🌿 El Vuelo del Cóndor Ayahuasca - Próximamente 🌿</h1>
+    <img src="img/coming-soon-ayahuasca.png.jpg" alt="El Vuelo del Cóndor Ayahuasca" />
+    <p>📞 Contacto: <strong>+52 1 446 397 9802 (Pino)</strong></p>
+    <a href="https://www.facebook.com/profile.php?id=61577668214257" class="button" target="_blank">🌐 Visítanos en Facebook</a>
+  </div>
 </body>
 </html>
