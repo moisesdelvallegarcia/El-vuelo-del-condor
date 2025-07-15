@@ -131,6 +131,50 @@
   height: auto;
   border-radius: 12px;
 }
+  .story-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+.slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 80%;
+  max-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  background: #000;
+}
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* --- Testimonio --- */
+.testimonial-intro {
+  font-style: italic;
+  margin: 2rem 0 1rem 0;
+}
+
+.testimonial {
+  background: rgba(0,0,0,0.4);
+  padding: 1.5rem;
+  border-left: 4px solid #1bc8a8;
+  border-radius: 8px;
+  color: #e0f7f1;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.hashtags {
+  font-size: 0.9rem;
+  color: #a0e8d8;
+  margin-bottom: 2rem;
+}
   </style>
 </head>
 <body>
@@ -221,7 +265,7 @@
   <div class="story-carousel">
     <div class="slide">
       <img 
-        src="img/0fa298bc-bd9e-478a-ab15-02093072979f.png" 
+        src="img/4a8f20f5-3b17-4494-90fd-6c503bf9a887.png" 
         alt="Ceremonia Tejupilco 23 de agosto" 
         loading="lazy"
       >
@@ -241,6 +285,21 @@
       >
     </div>
   </div>
+    <!-- Testimonio debajo del carrusel -->
+  <p class="testimonial-intro">
+    Ceremonia Espiritual de introspección y sanación con Medicinas de la selva Peruana.<br>
+    Informes solo por Whatsapp <strong>446 397 9802</strong>
+  </p>
+  <blockquote class="testimonial">
+    “La Abuelita (medicina de la selva) me enseñó a tener responsabilidad y a no ser una víctima de la realidad que han creado mis pensamientos, mis emociones y mis acciones.<br><br>
+    La Abuelita me enseñó a mirarme de frente y asumir mi propia oscuridad.<br><br>
+    …<br><br>
+    Gracias, Gracias, Gracias Abuelita por la guianza, por tanta sanación, expansión de Conciencia y Ascención. Ahó!”
+  </blockquote>
+  <p class="hashtags">
+    #ceremoniaespiritual #sanacionespiritual #medicinasdelaselva #sanacionemocional<br>
+    #trabajointerior #medicinasancestrales #meditacion #chamanismo #introspeccion #metafisica
+  </p>
 </section>
   <footer>
     <p>&copy; 2025 El Vuelo del Cóndor Ayahuasca | Compartiendo medicina desde la Amada Presencia Yo Soy</p>
