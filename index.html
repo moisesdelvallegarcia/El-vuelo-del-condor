@@ -175,6 +175,26 @@
   color: #a0e8d8;
   margin-bottom: 2rem;
 }
+    .phone-highlight {
+  background-color: rgba(27, 200, 168, 0.2);
+  border: 2px solid #1bc8a8;
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: inline-block;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.phone-highlight a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+.phone-highlight a:hover {
+  color: #1bc8a8;
+}
   </style>
 </head>
 <body>
@@ -256,7 +276,11 @@
   
     <section id="contacto" class="section">
       <h2>📞 Contacto y reservas</h2>
-      <p>Whatsapp directo a Pino: <a href="https://wa.me/5214463979802" target="_blank">+52 1 446 397 9802</a></p>
+      <p>Whatsapp directo a Pino: <div class="phone-highlight">
+  <a href="https://wa.me/5214463979802" target="_blank">
+    📞 +52 1 446 397 9802
+  </a>
+</div></p>
       <a href="https://www.facebook.com/profile.php?id=61577668214257" class="button" target="_blank">🌐 Visítanos en Facebook</a>
     </section>
   </div>
@@ -264,11 +288,12 @@
   <h2>📖 Historias y Testimonios</h2>
   <div class="story-carousel">
     <div class="slide">
+      <!-- comentado
       <img 
-        src="img/tejupilco" 
+        src="img/tejupilco.png" 
         alt="Ceremonia Tejupilco 23 de agosto" 
         loading="lazy"
-      >
+      >-->
     </div>
     <div class="slide">
       <img 
