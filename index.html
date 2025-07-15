@@ -265,7 +265,7 @@
   <div class="story-carousel">
     <div class="slide">
       <img 
-        src="img/4a8f20f5-3b17-4494-90fd-6c503bf9a887.png" 
+        src="img/tejupilco.png" 
         alt="Ceremonia Tejupilco 23 de agosto" 
         loading="lazy"
       >
@@ -304,5 +304,15 @@
   <footer>
     <p>&copy; 2025 El Vuelo del Cóndor Ayahuasca | Compartiendo medicina desde la Amada Presencia Yo Soy</p>
   </footer>
+  <script>
+    window.addEventListener('load', function() {
+      // Desplazar siempre al top al cargar
+      window.scrollTo(0, 0);
+      // Opcional: eliminar el hash de la URL para que no vuelva a anclar
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname + window.location.search);
+      }
+    });
+  </script>
 </body>
 </html>
