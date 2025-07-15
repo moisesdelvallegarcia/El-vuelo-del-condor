@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Ceremonias de Ayahuasca guiadas con amor y respeto a la tradición. Conéctate con el espíritu del Cóndor y transforma tu vida.">
   <meta name="keywords" content="ayahuasca, vuelo del cóndor, medicina ancestral, ceremonias, sanación, retiro espiritual">
   <meta name="author" content="El Vuelo del Cóndor">
@@ -13,7 +13,10 @@
     }
     body {
       margin: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      /* Imagen de fondo + capa oscura tenue */
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('ruta/a/tu-imagen.jpg') center/cover no-repeat;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
@@ -28,12 +31,11 @@
       color: #1bc8a8;
       text-shadow: 0 0 20px #1bc8a8;
     }
-
     /* Menú de navegación */
     nav.menu {
       position: sticky;
       top: 0;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.7);
       z-index: 100;
       padding: 10px 0;
       text-align: center;
@@ -43,17 +45,18 @@
       margin: 0;
       padding: 0;
       display: inline-flex;
-      gap: 25px;
+      gap: 20px;
     }
     nav.menu a {
       color: #1bc8a8;
       text-decoration: none;
       font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
     }
     nav.menu a:hover {
-      color: #00ffc3;
+      background: rgba(27, 200, 168, 0.2);
     }
-
     .container {
       max-width: 900px;
       margin: auto;
@@ -66,6 +69,13 @@
       color: #1bc8a8;
       border-bottom: 2px solid #1bc8a8;
       padding-bottom: 10px;
+    }
+    .section a {
+      color: #00ffc3;
+      text-decoration: underline;
+    }
+    .section a:hover {
+      color: #1bc8a8;
     }
     .button {
       background-color: #1bc8a8;
@@ -102,56 +112,28 @@
 
   <nav class="menu">
     <ul>
-      <li><a href="#quienes-somos">Quiénes somos</a></li>
-      <li><a href="#nuestro-altar">Nuestro altar</a></li>
-      <li><a href="#amada-presencia">La Amada Presencia Yo Soy</a></li>
-      <li><a href="#proximas-fechas">Próximas fechas</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+      <li><a href="#nuestra-medicina">Nuestra Medicina</a></li>
+      <li><a href="#preparacion-previa">Preparación previa</a></li>
+      <li><a href="#nuestra-musica">Nuestra Música</a></li>
+      <li><a href="#contacto">Contacto y reservas</a></li>
     </ul>
   </nav>
 
   <div class="container">
-    <section id="quienes-somos" class="section">
-      <h2>✨ Quiénes somos</h2>
-      <p>Somos un equipo de guardianes de la tradición ayahuasca, comprometidos con tu sanación y crecimiento.  
-      Integramos hombres y mujeres medicina: Pino, Monse, Beto, Humberto, Itan, Yadira, Ameyaltzin, Vicky, Moni, Koi, Estefanía y Moy.</p>
-    </section>
-
-    <section id="nuestro-altar" class="section">
-      <h2>🔮 Nuestro altar</h2>
-      <p>Nuestro altar es un espacio sagrado donde se honra a la Madre Ayahuasca y a las plantas maestras.  
-      Está dispuesto con flores, velas, tabaco y ofrendas, creando un ambiente propicio para la conexión y el trabajo interior.</p>
-    </section>
-
-    <section id="amada-presencia" class="section">
-      <h2>🌟 La Amada Presencia Yo Soy</h2>
-      <p>La Amada Presencia Yo Soy es la fuerza divina que habita en cada uno de nosotros.  
-      En nuestras ceremonias invocamos esta presencia para que guíe el proceso de sanación y transformación.</p>
-    </section>
-
-    <section id="proximas-fechas" class="section">
-      <h2>🗓️ Próximas fechas</h2>
-      <ul>
-        <li>2 de agosto de 2025</li>
-        <li>16 de agosto de 2025</li>
-        <li>30 de agosto de 2025</li>
-      </ul>
-      <p>Reserva tu lugar con anticipación, los cupos son limitados.</p>
-    </section>
-
-    <section class="section">
+    <section id="sobre-nosotros" class="section">
       <h2>✨ Sobre nosotros</h2>
       <p>Yo Soy Pino, de El Vuelo del Cóndor Ayahuasca. En el altar estamos Monse, Pino, Beto, Humberto, Itan, Yadira, Ameyaltzin, Vicky, Moni, Koi, Estefanía y Moy; hombres y mujeres medicina guardianes del conocimiento Sagrado reconocidos en la Amada Presencia Yo Soy.</p>
       <p>Más de una década trabajando con la medicina Ayahuasca y otras plantas maestras, y por supuesto con nuestro propio proceso para poder ofrecerles claridad y buena dirección en las ceremonias.</p>
     </section>
 
-    <section class="section">
+    <section id="nuestra-medicina" class="section">
       <h2>🌱 Nuestra Medicina</h2>
       <p>La medicina es cocinada por la maestra vegetalista Bety, Abuela Chamana de la comunidad shipibo en la selva del Perú.</p>
       <p>Nuestras ceremonias aplican un chamanismo contemporáneo con música medicina en vivo: ícaros, mantras y música medicina occidental.</p>
     </section>
 
-    <section class="section">
+    <section id="preparacion-previa" class="section">
       <h2>📜 Preparación previa</h2>
       <p>Para participar es indispensable seguir estas recomendaciones:</p>
       <ul>
@@ -163,14 +145,14 @@
       <p>Consulta la lista completa de preparación al momento de confirmar tu asistencia.</p>
     </section>
 
-    <section class="section">
-      <h2>🎶 Nuestra música</h2>
+    <section id="nuestra-musica" class="section">
+      <h2>🎶 Nuestra Música</h2>
       <p>Escucha la música medicina que acompaña nuestras ceremonias:</p>
       <ul>
         <li><a href="https://open.spotify.com/artist/0fIhWepLYUYIG6ClKlPp7d" target="_blank">Spotify</a></li>
         <li><a href="https://music.youtube.com/watch?v=feSlFfhl5YU&si=2AjXvEST7chDqgrS" target="_blank">YouTube Music</a></li>
-        <li><a href="https://soundcloud.com" target="_blank">SoundCloud</a></li>
-        <li><a href="https://music.apple.com" target="_blank">Apple Music</a></li>
+        <li><a href="https://open.spotify.com" target="_blank">SoundCloud</a></li>
+        <li><a href="https://open.spotify.com" target="_blank">Apple Music</a></li>
         <li><a href="https://youtube.com" target="_blank">YouTube</a></li>
       </ul>
     </section>
@@ -186,3 +168,4 @@
     <p>&copy; 2025 El Vuelo del Cóndor Ayahuasca | Compartiendo medicina desde la Amada Presencia Yo Soy</p>
   </footer>
 </body>
+</html>
