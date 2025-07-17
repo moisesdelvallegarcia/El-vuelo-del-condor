@@ -195,8 +195,43 @@
 .phone-highlight a:hover {
   color: #1bc8a8;
 }
+    /* Colapsable */
+.collapsible .extra-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.collapsible.expanded .extra-content {
+  max-height: 500px; /* lo que necesites para mostrar todo */
+}
+
+/* Botón “Ver más” */
+.toggle-more {
+  background: none;
+  border: 2px solid #1bc8a8;
+  color: #1bc8a8;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.toggle-more:hover {
+  background: rgba(27,200,168,0.1);
+}
   </style>
 </head>
+
+  <script>
+  document.querySelectorAll('.toggle-more').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const section = btn.closest('.collapsible');
+      const isOpen = section.classList.toggle('expanded');
+      btn.textContent = isOpen ? 'Ver menos' : 'Ver más';
+    });
+  });
+</script>
+  
 <body>
   <header>
     <h1>🌿 El Vuelo del Cóndor Ayahuasca 🌿</h1>
@@ -216,8 +251,24 @@
   <div class="container">
     <section id="sobre-nosotros" class="section">
       <h2>✨ Sobre nosotros</h2>
-      <p>Yo Soy Pino, de El Vuelo del Cóndor Ayahuasca. En el altar estamos Monse, Pino, Beto, Humberto, Itan, Yadira, Ameyaltzin, Vicky, Moni, Koi, Estefanía y Moy; hombres y mujeres medicina guardianes del conocimiento Sagrado reconocidos en la Amada Presencia Yo Soy.</p>
-      <p>Más de una década trabajando con la medicina Ayahuasca y otras plantas maestras, y por supuesto con nuestro propio proceso para poder ofrecerles claridad y buena dirección en las ceremonias.</p>
+       <div class="preview">
+    <p>Yo Soy Pino, de El Vuelo del Cóndor Ayahuasca. En el altar estamos Monse, Pino, Beto, Humberto,…</p>
+      </div>
+    <div class="extra-content">
+    <p>Itan, Yadira, Ameyaltzin, Vicky, Moni, Koi, Estefanía y Moy; hombres y mujeres medicina guardianes del conocimiento Sagrado reconocidos en la Amada Presencia Yo Soy.</p>
+    <p>Más de una década trabajando con la medicina Ayahuasca y otras plantas maestras, y por supuesto con nuestro propio proceso para poder ofrecerles claridad y buena dirección en las ceremonias!</p>
+      <p>Hemos conocido directamente las tradiciones chamánicas de la Selva Peruana y compartido Altar con maravillosos maestros a lo largo de los años, lo que nos ha permitido conocer distintas técnicas y caminos.</p>
+  <p>Más de dos mil personas al año son recibidas en nuestras ceremonias y la tribu sigue creciendo.</p>
+  <p>La medicina es cocinada por la maestra vegetalista Bety, Abuela Chamana de la comunidad shipibo en la selva del Perú.</p>
+  <p>Nuestras ceremonias aplican un chamanismo contemporáneo.</p>
+  <p>En la Ceremonia ofrecemos las tomas de ayahuasca que se requieran y además en el Altar tenemos otras benditas medicinas ancestrales que también se suministran en el momento adecuado al participante adecuado; estas medicinas son: Mapacho, sananga, rapé, perfumes, mamacoca, palo santo, hojas de pino, etc.</p>
+  <p>Toda la noche hay música medicina en vivo compuesta por ícaros, mantras y música medicina occidental, con un lenguaje apropiado a nuestros propios códigos culturales occidentales.</p>
+  <p>Es importante mencionar que en cada ceremonia también nos tomamos la medicina con los participantes para realmente estar conectados y llevar la contención de la energía de la ceremonia.</p>
+  <p>Tenemos una intención muy clara en nuestras ceremonias y es el apoyarlos a reconocer su propia Divinidad, su Ser interior, al Yo Soy!</p>
+  <p>Es desde ese propio reconocimiento que estamos al servicio de todos Ustedes!</p>
+  <p>Bienvenidos 🙌🏻</p>
+    </div>
+        <button class="toggle-more">Ver más</button>
     </section>
 
     <section id="nuestra-medicina" class="section">
