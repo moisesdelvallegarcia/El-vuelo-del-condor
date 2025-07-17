@@ -222,15 +222,6 @@
   </style>
 </head>
 
-  <script>
-  document.querySelectorAll('.toggle-more').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const section = btn.closest('.collapsible');
-      const isOpen = section.classList.toggle('expanded');
-      btn.textContent = isOpen ? 'Ver menos' : 'Ver más';
-    });
-  });
-</script>
   
 <body>
   <header>
@@ -257,7 +248,7 @@
     <div class="extra-content">
     <p>Itan, Yadira, Ameyaltzin, Vicky, Moni, Koi, Estefanía y Moy; hombres y mujeres medicina guardianes del conocimiento Sagrado reconocidos en la Amada Presencia Yo Soy.</p>
     <p>Más de una década trabajando con la medicina Ayahuasca y otras plantas maestras, y por supuesto con nuestro propio proceso para poder ofrecerles claridad y buena dirección en las ceremonias!</p>
-      <p>Hemos conocido directamente las tradiciones chamánicas de la Selva Peruana y compartido Altar con maravillosos maestros a lo largo de los años, lo que nos ha permitido conocer distintas técnicas y caminos.</p>
+    <p>Hemos conocido directamente las tradiciones chamánicas de la Selva Peruana y compartido Altar con maravillosos maestros a lo largo de los años, lo que nos ha permitido conocer distintas técnicas y caminos.</p>
   <p>Más de dos mil personas al año son recibidas en nuestras ceremonias y la tribu sigue creciendo.</p>
   <p>La medicina es cocinada por la maestra vegetalista Bety, Abuela Chamana de la comunidad shipibo en la selva del Perú.</p>
   <p>Nuestras ceremonias aplican un chamanismo contemporáneo.</p>
@@ -357,6 +348,7 @@
   <footer>
     <p>&copy; 2025 El Vuelo del Cóndor Ayahuasca | Compartiendo medicina desde la Amada Presencia Yo Soy</p>
   </footer>
+  
   <script>
     window.addEventListener('load', function() {
       // Desplazar siempre al top al cargar
@@ -367,5 +359,16 @@
       }
     });
   </script>
+
+  
+  <script>
+  document.querySelectorAll('.toggle-more').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const section = btn.closest('.collapsible');
+      const isOpen = section.classList.toggle('expanded');
+      btn.textContent = isOpen ? 'Ver menos' : 'Ver más';
+    });
+  });
+</script>
 </body>
 </html>
