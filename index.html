@@ -21,6 +21,26 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
     }
+    #lang-toggle {
+  position: absolute;
+  top: 20px;
+  right: 10px; /* más pegado a la orilla */
+  
+  padding: 8px 14px;
+  border-radius: 20px;
+  
+  background: rgba(255, 255, 255, 0.1); /* fondo semi transparente */
+  backdrop-filter: blur(8px); /* 🔥 difuminado */
+  -webkit-backdrop-filter: blur(8px); /* soporte Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  
+  transition: all 0.3s ease;
+}
     header {
       text-align: center;
       padding: 50px 20px;
