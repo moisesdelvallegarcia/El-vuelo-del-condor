@@ -224,10 +224,22 @@
 
   
 <body>
-  <header>
-    <h1>🌿 Altar El Vuelo del Cóndor y el Águila 🌿</h1>
-    <p>Gracias por atender al llamado. Con mucho gusto y amor te compartimos toda la información sobre nuestras ceremonias sagradas.</p>
-  </header>
+  
+<header>
+  <button id="lang-toggle">EN</button>
+
+  <h1 
+    data-es="🌿 Altar El Vuelo del Cóndor y el Águila 🌿"
+    data-en="🌿 The Flight of the Condor and the Eagle Altar 🌿">
+    🌿 Altar El Vuelo del Cóndor y el Águila 🌿
+  </h1>
+
+  <p 
+    data-es="Gracias por atender al llamado. Con amor te compartimos información sobre nuestras ceremonias."
+    data-en="Thank you for answering the call. We lovingly share information about our ceremonies.">
+    Gracias por atender al llamado...
+  </p>
+</header>
 
   <nav class="menu">
     <ul>
@@ -450,7 +462,26 @@
       }
     });
   </script>
+  
+  <script>
+let lang = localStorage.getItem("lang") || "es";
 
+function applyLang() {
+  document.querySelectorAll("[data-es]").forEach(el => {
+    el.textContent = el.getAttribute("data-" + lang);
+  });
+
+  document.getElementById("lang-toggle").textContent = lang === "es" ? "EN" : "ES";
+}
+
+applyLang();
+
+document.getElementById("lang-toggle").addEventListener("click", () => {
+  lang = lang === "es" ? "en" : "es";
+  localStorage.setItem("lang", lang);
+  applyLang();
+});
+</script>
   
   <script>
   document.querySelectorAll('.toggle-more').forEach(btn => {
