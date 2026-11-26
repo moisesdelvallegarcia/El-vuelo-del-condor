@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Ceremonias con la Abuela, guiadas con amor y respeto a la tradición. Conéctate con el espíritu del Cóndor y el Águila y transforma tu vida.">
-  <meta name="keywords" content="Medicina,altar el vuelo del cóndor y el águila, medicina ancestral, ceremonias, sanación, retiro espiritual">
+  <meta name="description" content="Ceremonias de Ayahuasca con la Abuelita en Querétaro, Salamanca, Teotihuacán y el Bajío. Música medicina en vivo, guía y contención. Calendario 2026 y reservas por WhatsApp.">
+  <meta name="keywords" content="ayahuasca, ceremonia de ayahuasca, ayahuasca Querétaro, ayahuasca Guanajuato, ayahuasca Salamanca, ayahuasca Teotihuacán, ayahuasca Bajío, medicina ancestral, altar el vuelo del cóndor y el águila">
   <meta name="author" content="Altar El Vuelo del Cóndor y el Águila">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/png" href="../img/favicon.png">
   <meta name="theme-color" content="#14110e">
-  <title>Altar El Vuelo del Cóndor y el Águila</title>
+  <title>Ceremonias de Ayahuasca en Querétaro, Guanajuato y Edomex | Altar El Vuelo del Cóndor y el Águila</title>
+  <link rel="canonical" href="https://altarelvuelodelcondoryelaguila.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Altar El Vuelo del Cóndor y el Águila">
+  <meta property="og:title" content="Altar El Vuelo del Cóndor y el Águila · Ceremonias de Ayahuasca">
+  <meta property="og:description" content="Ceremonias con la Abuelita Ayahuasca, música medicina en vivo y una tribu que te sostiene. Consulta el calendario y aparta tu lugar.">
+  <meta property="og:image" content="https://altarelvuelodelcondoryelaguila.com/img/og-altar.jpg">
+  <meta property="og:url" content="https://altarelvuelodelcondoryelaguila.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="../img/coming-soon-ayahuasca.png.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -189,6 +198,28 @@
     #lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(10,8,6,.94); display: none; align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
     #lightbox.on { display: flex; }
     #lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; }
+    .fecha { position: relative; transition: transform .25s ease, border-color .25s ease; }
+    .cartel-pop { display: none; }
+    @media (hover: hover) and (min-width: 700px) {
+      .fecha:hover { transform: translateY(-3px); border-color: var(--oro); z-index: 5; }
+      .cartel-pop {
+        display: block; position: absolute; left: 50%; bottom: calc(100% + 12px);
+        width: 260px; transform: translate(-50%, 10px) scale(.96); opacity: 0; pointer-events: none;
+        border-radius: 14px; border: 1px solid var(--oro); box-shadow: 0 24px 60px rgba(0,0,0,.7);
+        transition: opacity .25s ease, transform .25s ease;
+      }
+      .fecha:hover .cartel-pop { opacity: 1; transform: translate(-50%, 0) scale(1); }
+    }
+    .faq details { border: 1px solid var(--linea); border-radius: 14px; background: var(--pluma); margin-bottom: 10px; padding: 0 18px; }
+    .faq summary { cursor: pointer; padding: 16px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--oro); font-size: 1.3rem; line-height: 1; transition: transform .2s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { margin: 0 0 16px; }
+    /* Aparición suave al hacer scroll */
+    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .js .reveal.visto { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
     footer { text-align: center; padding: 48px 20px 90px; color: var(--plata); font-size: .85rem; border-top: 1px solid var(--linea); margin-top: 56px; }
     footer .logo-pie { width: 110px; opacity: .55; margin-bottom: 10px; }
     .hero .logo { width: min(210px, 52vw); margin: 0 auto 18px; filter: drop-shadow(0 4px 18px rgba(0,0,0,.6)); }
@@ -203,6 +234,170 @@
     .wa-flotante:hover { transform: scale(1.07); }
     .wa-flotante svg { width: 30px; height: 30px; fill: #fff; }
   </style>
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://altarelvuelodelcondoryelaguila.com/#altar",
+   "name": "Altar El Vuelo del Cóndor y el Águila",
+   "url": "https://altarelvuelodelcondoryelaguila.com/",
+   "logo": "https://altarelvuelodelcondoryelaguila.com/img/logo-altar.png",
+   "image": "https://altarelvuelodelcondoryelaguila.com/img/og-altar.jpg",
+   "telephone": "+52 1 446 397 9802",
+   "sameAs": [
+    "https://www.facebook.com/profile.php?id=61577668214257",
+    "https://open.spotify.com/artist/0fIhWepLYUYIG6ClKlPp7d",
+    "https://music.apple.com/mx/artist/altar-el-vuelo-del-c%C3%B3ndor-ayahuasca/1771794435"
+   ]
+  },
+  {
+   "@type": "Event",
+   "name": "Ceremonia de Ayahuasca en Salamanca · Altar El Vuelo del Cóndor y el Águila",
+   "startDate": "2026-12-05T20:00-06:00",
+   "endDate": "2026-12-06T11:00-06:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@type": "Place",
+    "name": "Salamanca",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Salamanca",
+     "addressRegion": "Guanajuato",
+     "addressCountry": "MX"
+    }
+   },
+   "image": "https://altarelvuelodelcondoryelaguila.com/img/carteles/salamanca-5-dic.jpg",
+   "description": "Ceremonia de introspección con Abuelita Ayahuasca, limpia con mapacho, rapé, música medicina en vivo, guía, contención y cacao en círculo de palabra.",
+   "organizer": {
+    "@id": "https://altarelvuelodelcondoryelaguila.com/#altar"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "1800",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://altarelvuelodelcondoryelaguila.com/#calendario"
+   }
+  },
+  {
+   "@type": "Event",
+   "name": "Ceremonia de Ayahuasca en Teotihuacán · Altar El Vuelo del Cóndor y el Águila",
+   "startDate": "2026-12-12T20:00-06:00",
+   "endDate": "2026-12-13T11:00-06:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@type": "Place",
+    "name": "Teotihuacán",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Teotihuacán",
+     "addressRegion": "Estado de México",
+     "addressCountry": "MX"
+    }
+   },
+   "image": "https://altarelvuelodelcondoryelaguila.com/img/carteles/teotihuacan-12-dic.jpg",
+   "description": "Ceremonia de introspección con Abuelita Ayahuasca, limpia con mapacho, rapé, música medicina en vivo, guía, contención y cacao en círculo de palabra.",
+   "organizer": {
+    "@id": "https://altarelvuelodelcondoryelaguila.com/#altar"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "1800",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://altarelvuelodelcondoryelaguila.com/#calendario"
+   }
+  },
+  {
+   "@type": "Event",
+   "name": "Ceremonia de Ayahuasca en Querétaro · Altar El Vuelo del Cóndor y el Águila",
+   "startDate": "2026-12-21T20:00-06:00",
+   "endDate": "2026-12-22T11:00-06:00",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "location": {
+    "@type": "Place",
+    "name": "Querétaro",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Querétaro",
+     "addressRegion": "Querétaro",
+     "addressCountry": "MX"
+    }
+   },
+   "image": "https://altarelvuelodelcondoryelaguila.com/img/carteles/queretaro-21-dic.jpg",
+   "description": "Ceremonia de introspección con Abuelita Ayahuasca, limpia con mapacho, rapé, música medicina en vivo, guía, contención y cacao en círculo de palabra.",
+   "organizer": {
+    "@id": "https://altarelvuelodelcondoryelaguila.com/#altar"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "1800",
+    "priceCurrency": "MXN",
+    "availability": "https://schema.org/InStock",
+    "url": "https://altarelvuelodelcondoryelaguila.com/#calendario"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "¿Cuánto cuesta la ceremonia?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La aportación es de $1,800 MXN por persona. Para apartar tu lugar se da un anticipo de $500 MXN y el resto se paga el día de la ceremonia."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿A qué hora empieza y termina?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Empezamos el sábado a las 8:00 pm (favor de llegar puntuales) y terminamos el domingo alrededor de las 11:00 am, con el círculo de palabra y cacao ceremonial."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cómo me preparo?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La preparación es indispensable y se hace 3 días antes: sin carne, alcohol, cafeína, azúcar, lácteos ni actividad sexual. Los medicamentos alopáticos se suspenden mínimo 7 días antes; si tomas alguno, escríbenos antes de reservar. Encuentras la guía completa en Preparación previa."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué tengo que llevar?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ropa cómoda y calientita, sleeper o cobijas, papel de baño, agua en cilindro, una cubetita para purga y una taza para el cacao. Si quieres, flores para el altar."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Cómo aparto mi lugar?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Escríbele a Pino por WhatsApp al +52 1 446 397 9802, da tu anticipo de $500 y te agregamos al grupo donde enviamos la dirección exacta. Los grupos son reducidos, anótate con tiempo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "¿Qué medicinas se comparten?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Abuelita Ayahuasca, cocinada por la maestra vegetalista Bety de la comunidad shipibo, y otras medicinas ancestrales como mapacho, sananga, rapé, mamacoca y palo santo, que se ofrecen en el momento adecuado al participante adecuado. Toda la noche hay música medicina en vivo."
+     }
+    }
+   ]
+  }
+ ]
+}
+  </script>
 </head>
 <body>
 
@@ -233,6 +428,7 @@
     <li><a href="#pago-reserva">Aportación</a></li>
     <li><a href="#nuestra-musica">Música</a></li>
     <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#preguntas">Preguntas</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
@@ -443,6 +639,19 @@
     <p style="text-align:center;margin-top:14px"><a href="https://www.facebook.com/profile.php?id=61577668214257&sk=reviews" target="_blank" rel="noopener">Ver todas las recomendaciones en Facebook →</a></p>
   </section>
 
+  <section id="preguntas" class="section">
+    <h2>Preguntas frecuentes</h2>
+    <div class="pluma-div"></div>
+    <div class="faq">
+      <details><summary>¿Cuánto cuesta la ceremonia?</summary><p>La aportación es de $1,800 MXN por persona. Para apartar tu lugar se da un anticipo de $500 MXN y el resto se paga el día de la ceremonia.</p></details>
+      <details><summary>¿A qué hora empieza y termina?</summary><p>Empezamos el sábado a las 8:00 pm (favor de llegar puntuales) y terminamos el domingo alrededor de las 11:00 am, con el círculo de palabra y cacao ceremonial.</p></details>
+      <details><summary>¿Cómo me preparo?</summary><p>La preparación es indispensable y se hace 3 días antes: sin carne, alcohol, cafeína, azúcar, lácteos ni actividad sexual. Los medicamentos alopáticos se suspenden mínimo 7 días antes; si tomas alguno, escríbenos antes de reservar. Encuentras la guía completa en <a href="#preparacion-previa">Preparación previa</a>.</p></details>
+      <details><summary>¿Qué tengo que llevar?</summary><p>Ropa cómoda y calientita, sleeper o cobijas, papel de baño, agua en cilindro, una cubetita para purga y una taza para el cacao. Si quieres, flores para el altar.</p></details>
+      <details><summary>¿Cómo aparto mi lugar?</summary><p>Escríbele a Pino por WhatsApp al +52 1 446 397 9802, da tu anticipo de $500 y te agregamos al grupo donde enviamos la dirección exacta. Los grupos son reducidos, anótate con tiempo.</p></details>
+      <details><summary>¿Qué medicinas se comparten?</summary><p>Abuelita Ayahuasca, cocinada por la maestra vegetalista Bety de la comunidad shipibo, y otras medicinas ancestrales como mapacho, sananga, rapé, mamacoca y palo santo, que se ofrecen en el momento adecuado al participante adecuado. Toda la noche hay música medicina en vivo.</p></details>
+    </div>
+  </section>
+
   <section id="contacto" class="section contacto">
     <h2>Contacto y reservas</h2>
     <div class="pluma-div" style="margin-left:auto;margin-right:auto"></div>
@@ -502,6 +711,7 @@
         ${c.nota ? `<div class="nota">${c.nota}</div>` : ""}
         <span class="estado ${pasada ? "agotada" : c.estado}">${pasada ? "Realizada" : ETQ[c.estado]}</span>
         ${!pasada && c.estado !== "agotada" ? `<a class="apartar" href="https://wa.me/${WA}?text=${texto}" target="_blank" rel="noopener">Apartar →</a>` : ""}
+        ${c.cartel && !pasada ? `<img class="cartel-pop" src="${c.cartel}" alt="Cartel ${c.lugar}" loading="lazy">` : ""}
         ${c.cartel && !pasada ? `<a class="apartar ver-cartel" href="${c.cartel}" data-lightbox>Ver cartel</a>` : ""}
       </div>`;
     cal.appendChild(div);
@@ -521,6 +731,10 @@
     if (a || img) { e.preventDefault(); lb.querySelector("img").src = a ? a.getAttribute("href") : img.src; lb.classList.add("on"); }
     else if (e.target.closest("#lightbox")) lb.classList.remove("on");
   });
+
+  // ===== Aparición al hacer scroll =====
+  const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visto"); io.unobserve(e.target); } }), { threshold: .12 }) : null;
+  document.querySelectorAll(".section").forEach(s => { s.classList.add("reveal"); io ? io.observe(s) : s.classList.add("visto"); });
 
   // ===== Idioma =====
   let lang = "es";
