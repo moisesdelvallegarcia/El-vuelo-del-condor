@@ -220,6 +220,11 @@
     .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
     .js .reveal.visto { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+    @media (max-width: 600px) {
+      .hero { justify-content: flex-start; padding-top: 44px; min-height: 0; padding-bottom: 44px; }
+      .hero .logo { width: 170px; margin-bottom: 12px; }
+      .hero .lema { margin-bottom: 20px; }
+    }
     footer { text-align: center; padding: 48px 20px 90px; color: var(--plata); font-size: .85rem; border-top: 1px solid var(--linea); margin-top: 56px; }
     footer .logo-pie { width: 110px; opacity: .55; margin-bottom: 10px; }
     .hero .logo { width: min(210px, 52vw); margin: 0 auto 18px; filter: drop-shadow(0 4px 18px rgba(0,0,0,.6)); }
