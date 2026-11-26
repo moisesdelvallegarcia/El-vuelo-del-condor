@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ceremonias con la Abuela, guiadas con amor y respeto a la tradición. Conéctate con el espíritu del Cóndor y el Águila y transforma tu vida.">
+  <meta name="keywords" content="Medicina,altar el vuelo del cóndor y el águila, medicina ancestral, ceremonias, sanación, retiro espiritual">
+  <meta name="author" content="Altar El Vuelo del Cóndor y el Águila">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#14110e">
+  <title>Altar El Vuelo del Cóndor y el Águila</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Paleta: el Cóndor andino (negro, collar blanco, alas plata, cresta roja)
+       y el Águila real (nuca dorada, plumaje café, garras amarillas) */
+    :root {
+      --noche: #14110e;     /* plumaje negro del cóndor */
+      --pluma: #1f1a15;
+      --pluma-2: #2a231c;
+      --collar: #f4efe6;    /* collar blanco del cóndor */
+      --plata: #b9b2a6;     /* plumas plateadas de las alas */
+      --oro: #d4a24c;       /* nuca dorada del águila */
+      --ambar: #a8672a;     /* plumaje café del águila */
+      --cresta: #c0533f;    /* cabeza roja del cóndor */
+      --garra: #e8c25a;     /* garras y pico amarillo del águila */
+      --verde: #6fae6a;
+      --linea: rgba(212,162,76,.25);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--noche);
+      color: var(--collar);
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; line-height: 1.15; }
+    a { color: var(--oro); }
+
+    /* ---------- Portada ---------- */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 20px 56px;
+      background:
+        linear-gradient(180deg, rgba(20,17,14,.35) 0%, rgba(20,17,14,.55) 45%, var(--noche) 100%),
+        url('../img/coming-soon-ayahuasca.png.jpg') center/cover no-repeat;
+      text-align: center;
+    }
+    #lang-toggle {
+      position: absolute; top: 16px; right: 16px;
+      padding: 7px 14px; border-radius: 999px;
+      background: rgba(20,17,14,.45);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(244,239,230,.3);
+      color: var(--collar); font-weight: 600; cursor: pointer; font-family: inherit;
+    }
+    .alas { font-size: .8rem; letter-spacing: .35em; text-transform: uppercase; color: var(--plata); margin: 0 0 12px; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      margin: 0 auto 14px; max-width: 780px;
+      background: linear-gradient(90deg, var(--collar) 0%, var(--garra) 50%, var(--oro) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero .lema { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; color: var(--collar); max-width: 620px; margin: 0 auto 28px; opacity: .92; }
+    .proxima {
+      margin: 0 auto 22px; max-width: 420px;
+      background: rgba(31,26,21,.75);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--linea); border-radius: 18px;
+      padding: 16px 20px;
+    }
+    .proxima small { color: var(--plata); letter-spacing: .2em; text-transform: uppercase; font-size: .72rem; }
+    .proxima strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--garra); margin-top: 2px; }
+    .proxima span { color: var(--plata); font-size: .9rem; }
+    .btn {
+      display: inline-block; text-decoration: none; font-weight: 600;
+      padding: 14px 28px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--garra), var(--oro) 55%, var(--ambar));
+      color: var(--noche); box-shadow: 0 8px 24px rgba(212,162,76,.25);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(212,162,76,.35); }
+    .btn-sec { background: transparent; color: var(--collar); border: 1px solid rgba(244,239,230,.35); box-shadow: none; }
+
+    /* ---------- Menú ---------- */
+    nav.menu {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(20,17,14,.92);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--linea);
+    }
+    nav.menu ul {
+      list-style: none; margin: 0 auto; padding: 10px 16px; max-width: 980px;
+      display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+    }
+    nav.menu ul::-webkit-scrollbar { display: none; }
+    nav.menu a {
+      white-space: nowrap; display: block;
+      color: var(--plata); text-decoration: none; font-size: .88rem; font-weight: 500;
+      padding: 6px 14px; border-radius: 999px; border: 1px solid transparent;
+    }
+    nav.menu a:hover { color: var(--garra); border-color: var(--linea); }
+
+    /* ---------- Secciones ---------- */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 56px 0 8px; }
+    .section h2 { font-size: clamp(1.9rem, 5vw, 2.5rem); margin: 0 0 6px; color: var(--collar); }
+    .pluma-div { width: 64px; height: 3px; border-radius: 3px; margin: 0 0 22px; background: linear-gradient(90deg, var(--cresta), var(--oro), var(--plata)); }
+    .section p, .section li { color: #e6dfd3; }
+    .card {
+      background: linear-gradient(180deg, var(--pluma), var(--noche));
+      border: 1px solid var(--linea); border-radius: 18px; padding: 22px 22px 18px;
+    }
+    .section ul { padding-left: 1.2em; }
+    .section ul li::marker { color: var(--oro); }
+    h3 { color: var(--garra); font-size: 1.35rem; margin: 18px 0 6px; }
+
+    /* Ver más */
+    .collapsible .extra-content { display: none; }
+    .collapsible.expanded .extra-content { display: block; animation: aparecer .35s ease; }
+    @keyframes aparecer { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+    .toggle-more {
+      background: none; border: 1px solid var(--oro); color: var(--oro);
+      padding: 8px 18px; border-radius: 999px; cursor: pointer; font-weight: 600; font-family: inherit; margin-top: 8px;
+    }
+    .toggle-more:hover { background: rgba(212,162,76,.1); }
+
+    /* Cita del chamán */
+    .cita { border-left: 3px solid var(--cresta); padding-left: 18px; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--collar); }
+
+    /* Música */
+    .musica { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; list-style: none; padding: 0 !important; }
+    .musica a {
+      display: block; text-align: center; text-decoration: none; color: var(--collar);
+      padding: 14px 10px; border-radius: 14px; border: 1px solid var(--linea); background: var(--pluma); font-weight: 500;
+    }
+    .musica a:hover { border-color: var(--oro); color: var(--garra); }
+
+    /* ---------- Calendario ---------- */
+    .cal { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin-top: 18px; }
+    .fecha {
+      display: flex; gap: 14px; align-items: center;
+      background: var(--pluma); border: 1px solid var(--linea); border-radius: 16px; padding: 14px 16px;
+    }
+    .fecha .dia { min-width: 58px; text-align: center; border-right: 1px solid var(--linea); padding-right: 12px; }
+    .fecha .dia b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2rem; line-height: 1; color: var(--garra); }
+    .fecha .dia i { font-style: normal; font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--plata); }
+    .fecha .info { flex: 1; }
+    .fecha .lugar { font-weight: 600; color: var(--collar); }
+    .fecha .nota { font-size: .82rem; color: var(--plata); line-height: 1.4; }
+    .estado { display: inline-block; margin-top: 6px; font-size: .74rem; font-weight: 600; padding: 2px 10px; border-radius: 999px; }
+    .estado.ok { background: rgba(111,174,106,.15); color: #9ad395; }
+    .estado.pocos { background: rgba(232,194,90,.15); color: var(--garra); }
+    .estado.agotada { background: rgba(192,83,63,.15); color: #e08a78; }
+    .fecha a.apartar { white-space: nowrap; font-size: .8rem; font-weight: 600; text-decoration: none; margin-left: 8px; }
+    .fecha.pasada { opacity: .4; }
+    .fecha.siguiente { border-color: var(--oro); box-shadow: 0 0 0 1px var(--oro), 0 8px 30px rgba(212,162,76,.18); }
+
+    /* ---------- Testimonios ---------- */
+    .testis { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .testi { background: var(--pluma); border: 1px solid var(--linea); border-radius: 16px; padding: 18px; }
+    .testi p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; margin: 0 0 8px; }
+    .testi span { color: var(--plata); font-size: .85rem; }
+    .pendiente { border-style: dashed; opacity: .7; }
+
+    /* ---------- Galería ---------- */
+    .galeria { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .galeria img, .galeria .hueco { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 14px; border: 1px solid var(--linea); }
+    .galeria .hueco { display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; color: var(--plata); font-size: .85rem; border-style: dashed; background: var(--pluma); }
+
+    /* ---------- Contacto ---------- */
+    .contacto { text-align: center; }
+    .tel { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--garra); text-decoration: none; margin: 10px 0 18px; }
+    .botones { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .pago { font-size: .95rem; }
+
+    footer { text-align: center; padding: 48px 20px 90px; color: var(--plata); font-size: .85rem; border-top: 1px solid var(--linea); margin-top: 56px; }
+    footer .simbolo { font-size: 1.6rem; letter-spacing: .4em; }
+
+    /* WhatsApp flotante */
+    .wa-flotante {
+      position: fixed; right: 16px; bottom: 16px; z-index: 60;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25d366; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,.45); transition: transform .2s ease;
+    }
+    .wa-flotante:hover { transform: scale(1.07); }
+    .wa-flotante svg { width: 30px; height: 30px; fill: #fff; }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <button id="lang-toggle">EN</button>
+  <p class="alas">Ceremonias de Ayahuasca · Medicina Ancestral</p>
+  <h1 data-es="Altar El Vuelo del Cóndor y el Águila" data-en="The Flight of the Condor and the Eagle Altar">Altar El Vuelo del Cóndor y el Águila</h1>
+  <p class="lema" data-es="Gracias por atender al llamado. Con amor te compartimos información sobre nuestras ceremonias." data-en="Thank you for answering the call. We lovingly share information about our ceremonies.">Gracias por atender al llamado. Con amor te compartimos información sobre nuestras ceremonias.</p>
+  <div class="proxima" id="proxima" hidden>
+    <small>Próxima ceremonia</small>
+    <strong id="proxima-lugar"></strong>
+    <span id="proxima-fecha"></span>
+  </div>
+  <div class="botones">
+    <a class="btn" id="btn-reservar" href="https://wa.me/5214463979802" target="_blank" rel="noopener">Reserva tu lugar</a>
+    <a class="btn btn-sec" href="#calendario">Ver calendario</a>
+  </div>
+</header>
+
+<nav class="menu">
+  <ul>
+    <li><a href="#sobre-nosotros">Nosotros</a></li>
+    <li><a href="#calendario">Calendario</a></li>
+    <li><a href="#preparacion-previa">Preparación</a></li>
+    <li><a href="#indicaciones-ceremonia">El día</a></li>
+    <li><a href="#pago-reserva">Aportación</a></li>
+    <li><a href="#nuestra-musica">Música</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+
+  <section id="sobre-nosotros" class="section collapsible">
+    <h2>Sobre nosotros y nuestra Medicina</h2>
+    <div class="pluma-div"></div>
+    <div class="preview">
+      <p>Yo Soy Pino, del Altar El Vuelo del Cóndor y el Águila. En el altar estamos Monse, Pino, Beto, Humberto, Itan, Yadira, Moni, Moy, Christian y Ana Melva; hombres y mujeres medicina guardianes del conocimiento Sagrado reconocidos en la Amada Presencia Yo Soy.</p>
+    </div>
+    <div class="extra-content">
+      <p>Más de una década trabajando con la medicina Ayahuasca y otras plantas maestras, y por supuesto con nuestro propio proceso para poder ofrecerles claridad y buena dirección en las ceremonias!</p>
+      <p>Hemos conocido directamente las tradiciones chamánicas de la Selva Peruana y compartido Altar con maravillosos maestros a lo largo de los años, lo que nos ha permitido conocer distintas técnicas y caminos.</p>
+      <p>Más de dos mil personas al año son recibidas en nuestras ceremonias y la tribu sigue creciendo.</p>
+      <p>La medicina es cocinada por la maestra vegetalista Bety, Abuela Chamana de la comunidad shipibo en la selva del Perú.</p>
+      <p>Nuestras ceremonias aplican un chamanismo contemporáneo.</p>
+      <p>En la Ceremonia ofrecemos las tomas de ayahuasca que se requieran y además en el Altar tenemos otras benditas medicinas ancestrales que también se suministran en el momento adecuado al participante adecuado; estas medicinas son: Mapacho, sananga, rapé, perfumes, mamacoca, palo santo, hojas de pino, etc.</p>
+      <p>Toda la noche hay música medicina en vivo compuesta por ícaros, mantras y música medicina occidental, con un lenguaje apropiado a nuestros propios códigos culturales occidentales.</p>
+      <p>Es importante mencionar que en cada ceremonia también nos tomamos la medicina con los participantes para realmente estar conectados y llevar la contención de la energía de la ceremonia.</p>
+      <p>Tenemos una intención muy clara en nuestras ceremonias y es el apoyarlos a reconocer su propia Divinidad, su Ser interior, al Yo Soy!</p>
+      <p>Es desde ese propio reconocimiento que estamos al servicio de todos Ustedes!</p>
+      <p>Bienvenidos 🙌🏻</p>
+    </div>
+    <button class="toggle-more">Ver más</button>
+  </section>
+
+  <section id="chaman" class="section collapsible">
+    <h2>Le preguntaron al Chamán</h2>
+    <div class="pluma-div"></div>
+    <div class="preview">
+      <p><strong>¿Cómo sé si estoy list@ para tomar Ayahuasca?</strong></p>
+      <p class="cita">Solo déjame compartir contigo que la medicina te elige, te llama, de otra forma no sabrías de ella. Ahora te corresponde a ti atender al llamado.</p>
+    </div>
+    <div class="extra-content">
+      <p>Ir a una ceremonia de Ayahuasca es algo muy especial: es iniciar un cambio de transformación en ti. Aya huasca es acercarte y reconectarte con tu Divinidad.</p>
+      <p>Si tú le preguntas a tu mente si quiere o si puede… siempre te dirá que no, que no hay tiempo; siempre sacará una excusa para posponer ese encuentro, porque una ceremonia de Aya huasca no se piensa, no es un evento social, no le corresponde al ego decidir. Una ceremonia es un compromiso contigo mism@.</p>
+      <p>Si le preguntas al ego, nunca va a poder; nunca se acomodan las cosas.</p>
+      <p>Cuando rebasas esa traba, entonces incluso tú vas hacia la Ayahuasca. No esperas a que llegue a tu ciudad, a que te acomode o a que puedan ir los amigos contigo. La buscas, la encuentras, te encuentras.</p>
+      <p>Compartiendo Medicinas Ancestrales desde la Amada Presencia Yo Soy.</p>
+    </div>
+    <button class="toggle-more">Ver más</button>
+  </section>
+
+  <section id="calendario" class="section">
+    <h2>Calendario de Ceremonias 2026</h2>
+    <div class="pluma-div"></div>
+    <p>☀️ Querida Tribu, con la bendición del Gran Espíritu les damos a conocer nuestras Ceremonias en curso del Año 2026 🙌🏻</p>
+    <!-- Para actualizar: cambia "estado" a ok, pocos o agotada -->
+    <div class="cal" id="cal"></div>
+  </section>
+
+  <section id="preparacion-previa" class="section collapsible">
+    <h2>Preparación previa</h2>
+    <div class="pluma-div"></div>
+    <div class="preview">
+      <p><strong>Preparación previa indispensable:</strong> realizarse al pie de la letra 3 días antes de la ceremonia.</p>
+    </div>
+    <div class="extra-content">
+      <div class="card">
+      <p><strong>Toma nota 📝:</strong></p>
+      <ul>
+        <li>Suspender el uso de medicamentos alopáticos (antidepresivos, ansiolíticos, pastillas para dormir o antigripales) mínimo 7 días antes. Contáctanos para dudas sobre tratamientos específicos.</li>
+        <li>Eliminar consumo de cualquier tipo de carne: roja, blanca, mariscos y especialmente cerdo.</li>
+        <li>Evitar cafeína, chocolate y café.</li>
+        <li>No consumir alcohol (ni una cerveza), cigarrillos o cualquier sustancia intoxicante.</li>
+        <li>Suspender otras medicinas naturales como cannabis, suplementos o tés con valeriana, hierba de San Juan, pasiflora, etc.</li>
+        <li>No tener actividad sexual de ningún tipo. Reservar energía sexual (no eyacular).</li>
+        <li>Eliminar el consumo de azúcar, grasas, alimentos procesados y “chatarra”.</li>
+        <li>Suspender refrescos (gaseosas) y bebidas muy frías.</li>
+        <li>Suspender lácteos 3 días previos (leche, queso, crema, yogur, etc.).</li>
+        <li>El día de la ceremonia, último alimento a las 2:00 pm (después, solo agua). Puedes hacer ayuno completo (opcional).</li>
+        <li>Procurar actividades saludables que relajen cuerpo, mente y corazón: meditación, yoga, ejercicio suave, caminata en la naturaleza, contacto con mascotas, jardinería ligera, etc.</li>
+      </ul>
+      <h3>Lo que SÍ puedes comer</h3>
+      <ul>
+        <li>Huevo</li><li>Tortillas</li><li>Lentejas (en sopa o preparaciones sin tocino)</li><li>Caldo de habas</li>
+        <li>Verduras (sopa, al vapor, asadas, crudas o guisos)</li><li>Frijoles (en caldo, machacados, enfrijoladas)</li>
+        <li>Ensaladas</li><li>Cóctel de frutas</li><li>Champiñones en caldo o guisos</li><li>Nopalitos asados o guisados</li>
+        <li>Guacamole</li><li>Soya en diferentes guisos</li><li>Taquitos de papa, frijol o aguacate</li><li>Arroz</li>
+        <li>Jugos naturales</li><li>Agua de coco natural</li><li>Agua de frutas (sin endulzar extra)</li>
+        <li>Agua de limón (sin endulzar)</li><li>Algunos tés</li><li>Leche de coco (sin lácteos)</li>
+      </ul>
+      </div>
+    </div>
+    <button class="toggle-more">Ver más</button>
+  </section>
+
+  <section id="indicaciones-ceremonia" class="section collapsible">
+    <h2>Indicaciones para el día de la ceremonia</h2>
+    <div class="pluma-div"></div>
+    <div class="preview">
+      <p>Ese día el último alimento es a las 2:00 pm (después, solo agua). Empezamos <strong>sábado 8:00 pm</strong> (favor de llegar puntuales) y terminamos domingo 11:00 am aproximadamente.</p>
+    </div>
+    <div class="extra-content">
+      <div class="card">
+      <ul>
+        <li>Llevar ropa cómoda y calientita 🧤</li>
+        <li>Sleeper y/o cobijas para un tendidito 🛌🏻 (evitar colchones inflables)</li>
+        <li>Papel de baño 🧻</li>
+        <li>Agua para beber en cilindro retornable 🍶</li>
+        <li>Cubetita chica para purga 🪣</li>
+        <li>Taza ☕ para compartir cacao ceremonial (al día siguiente en el círculo de palabra)</li>
+        <li>Opcional: flores para el altar 💐</li>
+      </ul>
+      </div>
+    </div>
+    <button class="toggle-more">Ver más</button>
+  </section>
+
+  <section id="pago-reserva" class="section collapsible">
+    <h2>Aportación y depósito</h2>
+    <div class="pluma-div"></div>
+    <div class="preview">
+      <p>La aportación para la Ceremonia Sagrada de Aya-huasca es de <strong>$1,800 MXN</strong> por persona (anticipo $500).</p>
+    </div>
+    <div class="extra-content">
+      <p>Se debe dar un anticipo de $500 MXN para confirmar tu lugar; el resto se paga el día de la ceremonia.</p>
+      <p>👉🏻 Una vez que reservas, te agregamos al grupo de WhatsApp y enviamos la dirección exacta.</p>
+      <p>Nuestros grupos son reducidos, cupo limitado: anótate con tiempo.</p>
+      <div class="card pago">
+        <h3>Datos para el anticipo (BBVA)</h3>
+        <p><strong>Tarjeta:</strong> 4152 3138 8403 3270<br>
+        <strong>CLABE:</strong> 012 290 01517522398 7<br>
+        <strong>A nombre de:</strong> Marlon Rocha</p>
+        <p>Para transferencia, depósito en Oxxo, PráctiCaja o banco.</p>
+      </div>
+      <p>Gracias, saludos y bendiciones.</p>
+    </div>
+    <button class="toggle-more">Ver más</button>
+  </section>
+
+  <section id="nuestra-musica" class="section">
+    <h2>Nuestra Música</h2>
+    <div class="pluma-div"></div>
+    <p>Escucha la música medicina que acompaña nuestras ceremonias:</p>
+    <ul class="musica">
+      <li><a href="https://open.spotify.com/artist/0fIhWepLYUYIG6ClKlPp7d" target="_blank" rel="noopener">Spotify</a></li>
+      <li><a href="https://music.youtube.com/watch?v=feSlFfhl5YU&si=2AjXvEST7chDqgrS" target="_blank" rel="noopener">YouTube Music</a></li>
+      <li><a href="https://music.apple.com/mx/artist/altar-el-vuelo-del-c%C3%B3ndor-ayahuasca/1771794435" target="_blank" rel="noopener">Apple Music</a></li>
+      <li><a href="https://soundcloud.com/search?q=el%20vuelo%20del%20condor%20ayahuasca" target="_blank" rel="noopener">SoundCloud</a></li>
+      <li><a href="https://www.youtube.com/watch?v=35ncqkg3USU" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+  </section>
+
+  <section id="galeria" class="section">
+    <h2>Galería</h2>
+    <div class="pluma-div"></div>
+    <div class="galeria">
+      <img src="../img/coming-soon-ayahuasca.png.jpg" alt="Ceremonia del altar" loading="lazy">
+      <div class="hueco">FOTO PENDIENTE: el fuego</div>
+      <div class="hueco">FOTO PENDIENTE: el altar</div>
+      <div class="hueco">FOTO PENDIENTE: naturaleza o amanecer</div>
+    </div>
+  </section>
+
+  <section id="testimonios" class="section">
+    <h2>Testimonios de la Tribu</h2>
+    <div class="pluma-div"></div>
+    <div class="testis">
+      <div class="testi pendiente"><p>“TESTIMONIO PENDIENTE: frase real de alguien que haya ido.”</p><span>Nombre de pila, ciudad</span></div>
+      <div class="testi pendiente"><p>“TESTIMONIO PENDIENTE.”</p><span>Nombre de pila, ciudad</span></div>
+      <div class="testi pendiente"><p>“TESTIMONIO PENDIENTE.”</p><span>Nombre de pila, ciudad</span></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section contacto">
+    <h2>Contacto y reservas</h2>
+    <div class="pluma-div" style="margin-left:auto;margin-right:auto"></div>
+    <p>WhatsApp directo a Pino</p>
+    <a class="tel" href="https://wa.me/5214463979802" target="_blank" rel="noopener">+52 1 446 397 9802</a>
+    <div class="botones">
+      <a class="btn" href="https://wa.me/5214463979802" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a class="btn btn-sec" href="https://www.facebook.com/profile.php?id=61577668214257" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="simbolo">🦅 🔥 🦅</div>
+  <p>&copy; 2026 Altar El Vuelo del Cóndor y el Águila<br>Compartiendo medicina desde la Amada Presencia Yo Soy</p>
+</footer>
+
+<a class="wa-flotante" href="https://wa.me/5214463979802" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.8-1.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5.1 10 10 5.2 16 5.2S26.9 10 26.9 15.8 22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script>
+  // ===== Calendario: edita solo esta lista =====
+  // estado: "ok" (disponible), "pocos" (pocos lugares), "agotada"
+  const CEREMONIAS = [
+    { fecha: "2026-10-17", lugar: "León, Gto.", estado: "agotada" },
+    { fecha: "2026-10-24", lugar: "Celaya", estado: "agotada" },
+    { fecha: "2026-10-31", lugar: "Tepotzotlán", estado: "agotada" },
+    { fecha: "2026-11-07", lugar: "Nido (Epitacio Huerta, Mich.)", nota: "Fogata, campamento y desayuno", estado: "agotada" },
+    { fecha: "2026-11-14", lugar: "Pachuca, Hidalgo", estado: "agotada" },
+    { fecha: "2026-11-21", lugar: "Morelia", estado: "pocos" },
+    { fecha: "2026-12-05", lugar: "Salamanca", estado: "ok" },
+    { fecha: "2026-12-12", lugar: "Teotihuacán", estado: "ok" },
+    { fecha: "2026-12-21", lugar: "Querétaro", nota: "Lunes · Ceremonia de Solsticio 🙌🏻", estado: "ok" }
+  ];
+  const WA = "5214463979802";
+  const MESES = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  const MESES_L = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const ETQ = { ok: "Reservaciones disponibles", pocos: "Pocos lugares", agotada: "Agotada" };
+  const hoy = new Date(); hoy.setHours(0,0,0,0);
+  let siguiente = null;
+  const cal = document.getElementById("cal");
+  CEREMONIAS.forEach(c => {
+    const [y,m,d] = c.fecha.split("-").map(Number);
+    const f = new Date(y, m-1, d);
+    const pasada = f < hoy;
+    const esSig = !pasada && c.estado !== "agotada" && !siguiente;
+    if (esSig) siguiente = { ...c, d, m };
+    const texto = encodeURIComponent(`Hola Pino, quiero reservar para la ceremonia de ${c.lugar} del ${d} de ${MESES_L[m-1]} 🙏`);
+    const div = document.createElement("div");
+    div.className = "fecha" + (pasada ? " pasada" : "") + (esSig ? " siguiente" : "");
+    div.innerHTML = `
+      <div class="dia"><b>${d}</b><i>${MESES[m-1]}</i></div>
+      <div class="info">
+        <div class="lugar">${c.lugar}</div>
+        ${c.nota ? `<div class="nota">${c.nota}</div>` : ""}
+        <span class="estado ${pasada ? "agotada" : c.estado}">${pasada ? "Realizada" : ETQ[c.estado]}</span>
+        ${!pasada && c.estado !== "agotada" ? `<a class="apartar" href="https://wa.me/${WA}?text=${texto}" target="_blank" rel="noopener">Apartar →</a>` : ""}
+      </div>`;
+    cal.appendChild(div);
+  });
+  if (siguiente) {
+    document.getElementById("proxima").hidden = false;
+    document.getElementById("proxima-lugar").textContent = siguiente.lugar;
+    document.getElementById("proxima-fecha").textContent = `Sábado ${siguiente.d} de ${MESES_L[siguiente.m-1]} · 8:00 pm`.replace(/^Sábado (21 de diciembre)/, "Lunes $1");
+    const t = encodeURIComponent(`Hola Pino, quiero reservar para la ceremonia de ${siguiente.lugar} del ${siguiente.d} de ${MESES_L[siguiente.m-1]} 🙏`);
+    document.getElementById("btn-reservar").href = `https://wa.me/${WA}?text=${t}`;
+  }
+
+  // ===== Idioma =====
+  let lang = "es";
+  try { lang = localStorage.getItem("lang") || "es"; } catch (e) {}
+  function applyLang() {
+    document.querySelectorAll("[data-es]").forEach(el => { el.textContent = el.getAttribute("data-" + lang); });
+    document.getElementById("lang-toggle").textContent = lang === "es" ? "EN" : "ES";
+  }
+  applyLang();
+  document.getElementById("lang-toggle").addEventListener("click", () => {
+    lang = lang === "es" ? "en" : "es";
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+    applyLang();
+  });
+
+  // ===== Ver más =====
+  document.querySelectorAll(".toggle-more").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const open = btn.closest(".collapsible").classList.toggle("expanded");
+      btn.textContent = open ? "Ver menos" : "Ver más";
+    });
+  });
+</script>
+</body>
+</html>
